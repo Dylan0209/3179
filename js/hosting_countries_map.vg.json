@@ -27,8 +27,8 @@
                         "data": {
                             "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/worldcups.csv"
                         },
-                        "key": "host",
-                        "fields": ["host", "year"]
+                        "key": "Host",
+                        "fields": ["Host", "Year"]
                     }
                 },
                 {
@@ -38,7 +38,7 @@
             "mark": {"type": "geoshape"},
             "encoding": {
                 "color": {
-                    "field": "host",
+                    "field": "Host",
                     "type": "nominal"
                 },
                 "tooltip":[
@@ -46,7 +46,7 @@
                         "field": "properties.NAME", "type": "nominal", "title": "Country"
                     },
                     {
-                        "field": "year", "type": "quantitative", "title": "Year"
+                        "field": "Year", "type": "quantitative", "title": "Year"
                     }
                 ]
             }
