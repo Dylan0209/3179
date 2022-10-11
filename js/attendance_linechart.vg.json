@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Growing target audience interest over time towards the World Cup",
-    "width": 800,
+    "width": 825,
     "height": 400,
     "data": {
         "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/worldcups.csv"

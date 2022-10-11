@@ -1,0 +1,26 @@
+html,
+body {
+    background-color: #F3FAF9;
+}
+
+.pure-g{
+    margin-top: 10px;
+}
+
+.pure-u-1-1 h1, p {
+    margin-left: 15px;
+}
+
+.pure-u-1-2 {
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+#host_countries_map {
+    width: 100%;
+    float: left
+}
+
+#attendance{
+    right: 0
+}
