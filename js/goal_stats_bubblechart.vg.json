@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Goals statistics for world cup contenders",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/goal_stats.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum.Goals_scored/datum.Goals_conceded * 100",
+            "as": "Percentage of goals scored to conceded"
+        }
+    ],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "Goals_scored",
+            "type": "quantitative",
+            "title": "Number of Goals Scored",
+            "axis": {"tickCount": 7},
+            "scale": {"type": "log", "domain": [1, 300]}
+
+        },
+        "y": {
+            "field": "Goals_conceded",
+            "type": "quantitative",
+            "title": "Number of Goals Conceded",
+            "axis": {"tickCount": 4},
+            "scale": {"type": "log", "domain": [1, 200]}
+
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    }
+}
+
+
+    
