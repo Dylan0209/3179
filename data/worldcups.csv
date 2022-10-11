@@ -15,7 +15,8 @@ year,host,winner,second,third,fourth,goals_scored,teams,games,attendance
 1990,Italy,West Germany,Argentina,Italy,England,115,24,52,2527348
 1994,USA,Brazil,Italy,Sweden,Bulgaria,141,24,52,3568567
 1998,France,France,Brazil,Croatia,Netherlands,171,32,64,2859234
-2002,"Japan, South Korea",Brazil,Germany,Turkey,South Korea,161,32,64,2724604
+2002,Japan,Brazil,Germany,Turkey,South Korea,161,32,64,2724604
+2002,South Korea,Brazil,Germany,Turkey,South Korea,161,32,64,2724604
 2006,Germany,Italy,France,Germany,Portugal,147,32,64,3367000
 2010,South Africa,Spain,Netherlands,Germany,Uruguay,145,32,64,2167984
 2014,Brazil,Germany,Argentina,Netherlands,Brazil,171,32,64,3441450
