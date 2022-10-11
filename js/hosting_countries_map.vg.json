@@ -27,18 +27,18 @@
                         "data": {
                             "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/worldcups.csv"
                         },
-                        "key": "Host",
-                        "fields": ["Host", "Year"]
+                        "key": "Host Countries",
+                        "fields": ["Host Countries", "Year"]
                     }
                 },
                 {
-                    "filter": "datum.year != null"
+                    "filter": "datum.Year != null"
                 }
             ],
             "mark": {"type": "geoshape"},
             "encoding": {
                 "color": {
-                    "field": "Host",
+                    "field": "Host Countries",
                     "type": "nominal"
                 },
                 "tooltip":[
