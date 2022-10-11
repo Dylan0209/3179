@@ -2,11 +2,11 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "World cup winners" },
     "data": {
-        "url": "data/city_daily_cost.csv"
+        "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/worldcups_winners.csv"
     },
     "mark": "bar",
     "encoding": {
-        "y": { "field": "city", "type": "nominal" },
-        "x": { "field": "daily_cost", "type": "quantitative" }
+        "y": { "field": "Count", "type": "quantitative" },
+        "x": { "field": "Winner", "type": "nominal" }
     }
 }
