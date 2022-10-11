@@ -2,15 +2,60 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 400,
-    "title": "Goals statistics for world cup contenders",
+    "title": "Goals statistics for 20 historical world cup contenders",
     "data": {
         "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/goal_stats.csv"
     },
-    "transform": [
+    "params": [
         {
-            "calculate": "datum.Goals_scored/datum.Goals_conceded * 100",
-            "as": "Percentage of goals scored to conceded"
+            "name": "Historical_performance",
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "Uruguay",
+                    "Italy",
+                    "Brazil",
+                    "England",
+                    "Argentina",
+                    "France",
+                    "Spain",
+                    "Germany"
+                ],
+                "labels": [
+                    "Show All",
+                    "Uruguay",
+                    "Italy",
+                    "Brazil",
+                    "England",
+                    "Argentina",
+                    "France",
+                    "Spain",
+                    "Germany"
+                ],
+                "name": "Choose world cup winner to view historical performance: "
+            }
         }
+    ],
+    "transform": [
+        {   
+            "calculate": "datum.Goals_scored/datum.Goals_conceded",
+            "as": "Scored/Conceded goals ratio"
+        },
+        {
+            "window": [
+                {
+                    "op": "rank",
+                    "as": "rank"
+                }
+            ],
+            "sort": [{ "field": "Scored/Conceded goals ratio", "order": "descending"}]
+        },
+        { "filter": "datum.rank <= 20" },
+        {"filter": "datum.Goals_scored > 0" },
+        {"filter": "datum.Goals_conceded> 0" },
+        { "filter" : "Historical_performance == null || datum.Country == Historical_performance" }
+
     ],
     "mark": "circle",
     "encoding": {
@@ -19,23 +64,36 @@
             "type": "quantitative",
             "title": "Number of Goals Scored",
             "axis": {"tickCount": 7},
-            "scale": {"type": "log", "domain": [1, 300]}
+            "scale": {"type": "log", "domain": [10, 300]}
 
         },
         "y": {
             "field": "Goals_conceded",
             "type": "quantitative",
             "title": "Number of Goals Conceded",
-            "axis": {"tickCount": 4},
-            "scale": {"type": "log", "domain": [1, 200]}
+            "axis": {"tickCount": 7},
+            "scale": {"type": "log", "domain": [10, 200]}
 
         },
         "color": {
             "field": "Country",
             "type": "nominal"
-        }
+        },
+        "size": {
+            "field": "Scored/Conceded goals ratio",
+            "type": "quantitative",
+            "scale": {
+                "type": "threshold",
+                "domain": [1, 1.5, 1.75, 2],
+                "range": [150, 300, 600, 900, 1200]
+            },
+            "legend": {"format": ".2s"}
+        },
+        "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Goals_scored","type": "quantitative", "title": "Goals scored"},
+            {"field": "Goals_conceded","type": "quantitative", "title": "Goals conceded"},
+            {"field": "Scored/Conceded goals ratio", "type": "quantitative", "format": ".2f"}
+        ]
     }
 }
-
-
-    
