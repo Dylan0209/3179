@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Most popular sporting events",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/survey.csv"
+    },
+    "transform": [
+        {   
+            "calculate": "datum.Popularity/100000000",
+            "as": "Event_Popularity"
+        }
+    ],
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },{
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "Event_Popularity", "type": "quantitative"}
+      }
+    }],
+    "encoding": {
+      "theta": {"field": "Event_Popularity", "type": "quantitative", "stack": true},
+      "color": {"field": "Event", "type": "nominal", "legend": "Event"}
+    }
+  }
