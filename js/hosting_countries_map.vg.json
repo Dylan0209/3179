@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "FIFA World Cup hosting countries",
-    "width": 800,
+    "description": "FIFA World Cup hosting countries",
+    "width": 790,
     "height": 400,
     "projection": {"type": "equalEarth"},
     "data": {

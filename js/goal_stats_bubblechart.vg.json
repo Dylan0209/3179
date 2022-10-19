@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width":350,
     "height": 400,
-    "title": "Goals statistics for 20 historical world cup contenders",
+    "title": "Performance of 20 historical world cup contenders",
     "data": {
         "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/goal_stats.csv"
     },

@@ -1,6 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Most popular sporting events",
+    "width": 320,
+    "height": 200,
+    "title": "Sporting events watched per 100 Million viewers",
     "data": {
         "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/survey.csv"
     },
@@ -20,6 +22,7 @@
     }],
     "encoding": {
       "theta": {"field": "Event_Popularity", "type": "quantitative", "stack": true},
+      "radius": {"field": "Event_Popularity", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
       "color": {"field": "Event", "type": "nominal", "legend": "Event"}
     }
   }
