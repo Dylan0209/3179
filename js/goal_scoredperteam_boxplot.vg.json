@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 400,
+    "title": "Most spectacular teams amongst world cup winners",
+    "data": {"url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/goal_stats_per_worldcup.csv"},
+    "mark": {
+      "type": "boxplot",
+      "extent": "min-max"
+    },
+    "transform": [
+      {
+        "filter": "datum.Country == 'Argentina' || datum.Country == 'Brazil' || datum.Country == 'England' || datum.Country == 'France'|| datum.Country == 'Germany'|| datum.Country == 'Italy' || datum.Country == 'Spain' || datum.Country == 'Uruguay'"
+      }
+    ],
+    "encoding": {
+      "x": {"field": "Goals_scored", "type": "quantitative", "title": "Goals scored"},
+      "color": {"field": "Country", "type": "nominal", "legend": "Country"},
+      "y": {
+        "field": "Country",
+        "type": "nominal"
+      }
+    }
+  }
