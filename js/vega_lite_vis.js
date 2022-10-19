@@ -3,18 +3,18 @@ var attendance = "js/attendance_linechart.vg.json"
 var barChart = "js/worldcup_winners_barchart.vg.json"
 var bubbleChart = "js/goal_stats_bubblechart.vg.json"
 
-vegaEmbed('#host_countries_map', map).then(function(result) {
+vegaEmbed('#host_countries_map', map, { "actions": false }).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-vegaEmbed('#attendance', attendance).then(function(result) {
+vegaEmbed('#attendance', attendance, { "actions": false }).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-vegaEmbed('#barchart', barChart).then(function(result) {
+vegaEmbed('#barchart', barChart, { "actions": false }).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-vegaEmbed('#bubblechart', bubbleChart).then(function(result) {
+vegaEmbed('#bubblechart', bubbleChart, { "actions": false }).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
