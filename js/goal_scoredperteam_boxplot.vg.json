@@ -17,7 +17,7 @@
       "x": {"field": "Goals_scored", "type": "quantitative", "title": "Number of Goals scored on average"},
       "color": {"field": "Country",
         "type": "nominal", 
-        "legend": null,
+        "legend": "Country",
         "scale": {
           "domain": [
             "Argentina",

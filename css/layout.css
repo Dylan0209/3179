@@ -6,6 +6,16 @@ body *{
     font-size: x-large;
     font-weight: 900;
   }
+
+  p {
+    font-size: large;
+  }
+
+  span.worldcup_text{
+    font-size: large;
+    font-weight: bold;
+    color: #e45454;
+  }
   
   body {
     background-color: rgb(53, 100, 53);

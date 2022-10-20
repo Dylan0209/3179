@@ -57,7 +57,6 @@
         { "filter" : "Historical_performance == null || datum.Country == Historical_performance" }
 
     ],
-    "mark": "circle",
     "encoding": {
         "x": {
             "field": "Goals_scored",
@@ -116,22 +115,49 @@
               "#ffeda0"
             ]
           }
-        },
-        "size": {
-            "field": "Scored/Conceded goals ratio",
-            "type": "quantitative",
-            "scale": {
-                "type": "threshold",
-                "domain": [1, 1.5, 1.75, 2],
-                "range": [150, 300, 600, 900, 1200]
+        }
+    },
+    "layer": [
+      {
+        "mark": "circle",
+        "encoding": {
+            "size": {
+              "field": "Scored/Conceded goals ratio",
+              "type": "quantitative",
+              "scale": {
+                  "type": "threshold",
+                  "domain": [1, 1.5, 1.75, 2],
+                  "range": [150, 300, 600, 900, 1200]
+              },
+              "legend": {"format": ".2s"}
             },
-            "legend": {"format": ".2s"}
-        },
-        "tooltip": [
+            "tooltip": [
             {"field": "Country", "type": "nominal"},
             {"field": "Goals_scored","type": "quantitative", "title": "Goals scored"},
             {"field": "Goals_conceded","type": "quantitative", "title": "Goals conceded"},
-            {"field": "Scored/Conceded goals ratio", "type": "quantitative", "format": ".2f"}
-        ]
+            {"field": "Scored/Conceded goals ratio", "type": "quantitative", "format": ".2f"}]
+        }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum.Country == 'Brazil' || datum.Country == 'Germany' || datum.Country == 'Argentina' || datum.Country == 'Portugal'" ,
+            "value": 1
+          },
+          "value": 0
+        }
+      }
     }
+  ]
 }
