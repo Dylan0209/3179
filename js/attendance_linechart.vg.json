@@ -15,8 +15,8 @@
         }
       },
     "encoding": {
-      "x": {"field": "Year", "type": "quantitative"},
-      "y": {"field": "Attendance", "type": "quantitative"},
+      "x": {"field": "Year", "type": "quantitative", "title": "World Cup Year"},
+      "y": {"field": "Attendance", "type": "quantitative", "title": "Number of people attending WC matches"},
       "tooltip": [
         {
           "field": "Year", "type": "quantitative", "title": "Year"

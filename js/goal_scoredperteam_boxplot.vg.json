@@ -14,8 +14,33 @@
       }
     ],
     "encoding": {
-      "x": {"field": "Goals_scored", "type": "quantitative", "title": "Goals scored"},
-      "color": {"field": "Country", "type": "nominal", "legend": "Country"},
+      "x": {"field": "Goals_scored", "type": "quantitative", "title": "Number of Goals scored on average"},
+      "color": {"field": "Country",
+        "type": "nominal", 
+        "legend": null,
+        "scale": {
+          "domain": [
+            "Argentina",
+            "Brazil",
+            "England",
+            "France",
+            "Germany",
+            "Italy",
+            "Spain",
+            "Uruguay"
+          ],
+          "range": [
+            "#2b8cbe",
+            "#fec44f",
+            "#d95f0e",
+            "#fee0d2",
+            "#756bb1",
+            "#bdbdbd",
+            "#de2d26",
+            "#dd1c77"
+          ]
+        }
+      } ,
       "y": {
         "field": "Country",
         "type": "nominal"

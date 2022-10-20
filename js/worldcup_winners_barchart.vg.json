@@ -9,6 +9,33 @@
     "mark": "bar",
     "encoding": {
         "y": { "field": "Count", "type": "quantitative" },
-        "x": { "field": "Winner", "type": "nominal" }
+        "x": { "field": "Winner", "type": "nominal" },
+        "color": {
+          "field": "Winner",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Argentina",
+              "Brazil",
+              "England",
+              "France",
+              "Germany",
+              "Italy",
+              "Spain",
+              "Uruguay"
+            ],
+            "range": [
+              "#2b8cbe",
+              "#fec44f",
+              "#d95f0e",
+              "#fee0d2",
+              "#756bb1",
+              "#bdbdbd",
+              "#de2d26",
+              "#dd1c77"
+            ]
+          }
+        } 
     }
 }

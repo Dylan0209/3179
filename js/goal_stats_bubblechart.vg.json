@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width":350,
     "height": 400,
-    "title": "Performance of 20 historical world cup contenders",
+    "title": "Performance of 16 historical world cup contenders",
     "data": {
         "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/goal_stats.csv"
     },
@@ -51,7 +51,7 @@
             ],
             "sort": [{ "field": "Scored/Conceded goals ratio", "order": "descending"}]
         },
-        { "filter": "datum.rank <= 20" },
+        { "filter": "datum.rank <= 16" },
         {"filter": "datum.Goals_scored > 0" },
         {"filter": "datum.Goals_conceded> 0" },
         { "filter" : "Historical_performance == null || datum.Country == Historical_performance" }
@@ -64,7 +64,7 @@
             "type": "quantitative",
             "title": "Number of Goals Scored",
             "axis": {"tickCount": 7},
-            "scale": {"type": "log", "domain": [10, 300]}
+            "scale": {"type": "log", "domain": [15, 300]}
 
         },
         "y": {
@@ -77,7 +77,45 @@
         },
         "color": {
             "field": "Country",
-            "type": "nominal"
+            "type": "nominal",
+            "scale": {
+            "domain": [
+              "Argentina",
+              "Brazil",
+              "England",
+              "France",
+              "Germany",
+              "Italy",
+              "Spain",
+              "Uruguay",
+              "Croatia",
+              "Hungary",
+              "Netherlands",
+              "Portugal",
+              "Russia",
+              "Soviet Union",
+              "Turkey",
+              "Yugoslavia"
+            ],
+            "range": [
+              "#2b8cbe",
+              "#fec44f",
+              "#d95f0e",
+              "#fee0d2",
+              "#756bb1",
+              "#bdbdbd",
+              "#de2d26",
+              "#dd1c77",
+              "#9ebcda",
+              "#feb24c",
+              "#efedf5",
+              "#fdbb84",
+              "#fa9fb5",
+              "#c994c7",
+              "#636363",
+              "#ffeda0"
+            ]
+          }
         },
         "size": {
             "field": "Scored/Conceded goals ratio",

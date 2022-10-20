@@ -1,28 +1,52 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 320,
-    "height": 200,
-    "title": "Sporting events watched per 100 Million viewers",
-    "data": {
-        "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/survey.csv"
-    },
-    "transform": [
-        {   
-            "calculate": "datum.Popularity/100000000",
-            "as": "Event_Popularity"
-        }
-    ],
-    "layer": [{
-      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
-    },{
-      "mark": {"type": "text", "radiusOffset": 10},
-      "encoding": {
-        "text": {"field": "Event_Popularity", "type": "quantitative"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 320,
+  "height": 200,
+  "title": "Sporting events watched per 100 Million viewers",
+  "data": {
+      "url": "https://raw.githubusercontent.com/Dylan0209/3179/main/data/survey.csv"
+  },
+  "transform": [
+      {   
+          "calculate": "datum.Popularity/100000000",
+          "as": "Event_Popularity"
       }
-    }],
+  ],
+  "layer": [{
+    "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+  },{
+    "mark": {"type": "text", "radiusOffset": 10},
     "encoding": {
-      "theta": {"field": "Event_Popularity", "type": "quantitative", "stack": true},
-      "radius": {"field": "Event_Popularity", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
-      "color": {"field": "Event", "type": "nominal", "legend": "Event"}
+      "text": {"field": "Event_Popularity", "type": "quantitative"}
     }
+  }],
+  "encoding": {
+    "theta": {"field": "Event_Popularity", "type": "quantitative", "stack": true},
+    "radius": {"field": "Event_Popularity", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+    "color": {
+      "field": "Event",
+      "type": "nominal", 
+      "legend": "Event",
+      "scale": {
+          "domain": [
+            "Boxing",
+            "Cricket World Cup",
+            "Men's Soccer World Cup",
+            "Summer Games",
+            "Tour de France",
+            "Winter Games",
+            "Women's World Cup"
+          ],
+          "range": [
+            "#4c78a8",
+            "#f58518",
+            "#e45454",
+            "#72b7b2",
+            "#dd1c77",
+            "#eeca3b",
+            "#b279a2"
+          ]
+        }
+      }
   }
+}
